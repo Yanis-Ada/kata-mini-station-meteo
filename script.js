@@ -22,6 +22,11 @@ async function fetchCoordinates(city) {
         gpsDiv.textContent = "";
         detailsDiv.textContent = `Erreur : ${error.message}`;
         console.error("Problème de récuperation de données", error)
+        
+        if (input != city) {
+            cityDiv.textContent = "Ville non trouvée";
+            detailsDiv.textContent = "Vérifier le nom de la ville";
+        }
       }
     }
     
